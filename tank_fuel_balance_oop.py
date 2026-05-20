@@ -143,15 +143,15 @@ def main():
     except ImportError:
         plt = None
 
-    # mission = mission_data(
-    #     r"C:\Users\IlanGerson\Documents\Scripting\fuel_balance\flops_mission_with_component_breakdown_maxendurance.csv"
-    # )
+    mission = mission_data(
+        r"C:\Users\IlanGerson\Documents\Scripting\fuel_balance\flops_mission_with_component_breakdown_maxendurance.csv"
+    )
     # mission = mission_data(
     #     r"C:\Users\IlanGerson\Documents\Scripting\fuel_balance\flops_mission_with_component_breakdown_mach1.7mission.csv"
     # )
-    mission = mission_data(
-        r"C:\Users\IlanGerson\Documents\Scripting\fuel_balance\flops_mission_with_component_breakdown_reference.csv"
-    )
+    # mission = mission_data(
+    #     r"C:\Users\IlanGerson\Documents\Scripting\fuel_balance\flops_mission_with_component_breakdown_reference.csv"
+    # )
     
     fwd_mass_init = 1603.89 #assume these are in kg?
 
