@@ -482,6 +482,20 @@ def main():
     axes[3].set_title("Transfer Command vs Time")
 
     fig.tight_layout()
+
+    total_vehicle_mass_kg = [fuel_mass + vehicle_empty_mass for fuel_mass in total_fuel_kg]
+    mass_cg_fig, mass_cg_ax = plt.subplots(1, 1, num="Vehicle Mass vs CG", figsize=(11, 6))
+    mass_cg_ax.plot(plane_1.CG_history, total_vehicle_mass_kg, linewidth=1.6, label="Vehicle Mass")
+    mass_cg_ax.axvline(vehicle_empty_cg, color="red", linestyle=":", linewidth=1.6, label="Empty CG")
+    mass_cg_ax.axvline(cg_far_limit, color="blue", linestyle=":", linewidth=1.6, label="Aft CG Limit")
+    mass_cg_ax.axvline(cg_near_limit, color="blue", linestyle=":", linewidth=1.6, label="FWD CG Limit")
+    mass_cg_ax.grid(True)
+    mass_cg_ax.set_xlabel("CG [m]")
+    mass_cg_ax.set_ylabel("Total vehicle mass [kg]")
+    mass_cg_ax.set_title("Total Vehicle Mass vs Vehicle CG")
+    mass_cg_ax.legend(loc="best")
+    mass_cg_fig.tight_layout()
+
     plt.show()
 
 main()
